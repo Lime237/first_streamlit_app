@@ -58,11 +58,11 @@ except URLError as e:
 
 def insert_row_snowflake(new_fruit):
   with my_cnx.cursor() as my_cur:
-    my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+    my_cur.execute("insert into fruit_load_list values ('" + 'new fruit' + "')")
     return "Thanks for adding" + new_fruit
 
 # aus more Functions bereich
-def get_fruit_load_lsit():
+def get_fruit_load_list():
   with my_cnx.cursor() as my_cur:
     my_cur.execute("select * from fruit_load_list")
     return my_cur.fetchall()
